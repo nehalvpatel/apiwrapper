@@ -1,0 +1,12 @@
+{
+	"name": "xboxleaders api wrapper",
+	"description": "Simple PHP Wrapper for the XboxLeaders.com Xbox LIVE API",
+	"type": "library",
+	"license": "DBAD",
+	"authors": [
+		{
+			"name": "Jason Clemons",
+			"email": "me@jasonclemons.me"
+		}
+	]
+}
