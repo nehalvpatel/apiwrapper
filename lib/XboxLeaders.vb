@@ -1,5 +1,5 @@
 'Author: Nehal Patel (http://www.itspatel.com/)
-'Last Updated: 3/22/2013
+'Last Updated: 3/24/2013
 
 Imports System.IO
 Imports System.Net
@@ -40,18 +40,28 @@ Public Class XboxLeaders
         End Set
     End Property
 
-    Dim _Format As String = "xml"
     ''' <summary>
-    ''' Gets or sets the format of the API response. (Possible values: json, php, xml)
+    ''' A pre-compiled list of formats that the API supports
+    ''' </summary>
+    ''' <remarks></remarks>
+    Enum FormatType
+        JSON = 0
+        PHP = 1
+        XML = 2
+    End Enum
+
+    Dim _Format As FormatType = FormatType.XML
+    ''' <summary>
+    ''' Gets or sets the format of the API response.
     ''' </summary>
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Property Format As String
+    Public Property Format As FormatType
         Get
             Return _Format
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As FormatType)
             _Format = value
         End Set
     End Property
@@ -79,7 +89,16 @@ Public Class XboxLeaders
 #End Region
 
     Private Function http(ByVal Request As String, ByVal Parameters As String)
-        Dim URL As String = Endpoint & Request & "." & Format & "?" & Parameters
+        Dim FormatString As String = ""
+        Select Case _Format
+            Case FormatType.JSON
+                FormatString = "json"
+            Case FormatType.PHP
+                FormatString = "php"
+            Case FormatType.XML
+                FormatString = "xml"
+        End Select
+        Dim URL As String = Endpoint & Request & "." & FormatString & "?" & Parameters
         Parameters = Encode(Parameters)
 
         Dim HTTPRequest As HttpWebRequest
