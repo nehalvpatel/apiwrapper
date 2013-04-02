@@ -1,4 +1,5 @@
 'Author: Nehal Patel (http://www.itspatel.com/)
+'Version: 1.0.0.1
 'Last Updated: 3/24/2013
 
 Imports System.IO

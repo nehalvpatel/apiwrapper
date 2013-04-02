@@ -1,12 +1,12 @@
 {
-	"name": "xboxleaders api wrapper",
-	"description": "Simple PHP Wrapper for the XboxLeaders.com Xbox LIVE API",
+	"name": "vb.net xboxleaders api wrapper",
+	"description": "A compact, asynchronous wrapper for the XboxLeaders.com Xbox API",
 	"type": "library",
 	"license": "DBAD",
 	"authors": [
 		{
-			"name": "Jason Clemons",
-			"email": "me@jasonclemons.me"
+			"name": "Nehal Patel",
+			"email": "nehal@itspatel.com"
 		}
 	]
 }
